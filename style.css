@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    background-color: lightgray;
+}
+
+
+.cell {
+    border: 1px solid gray;
+    min-width: 50px;
+    min-height: 50px;
+    display: inline-block;
+  }
+
+.cell:hover{
+    
+}
