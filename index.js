@@ -24,12 +24,13 @@ function defaultGrid() {
 }
 defaultGrid()
 
-const paintCell = () =>{
-    cells.className = 'paintedCell'
+let paintedCell = 'paintedCell'
+
+function colorize(event){
+    const target = event.target
+    target.className = paintedCell
 }
 
-// This is not working
-// for some reason all of the cells are being selected at once or something
 for(let i = 0; i < cells.length; i++){
-    cells[i].addEventListener('mouseover', paintCell)
+    cells[i].addEventListener('mouseover', colorize)
 }
