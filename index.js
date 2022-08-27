@@ -23,9 +23,10 @@ addButton.addEventListener('click', () => {
     let newGrid = Number(prompt(
         "What grid dimensions would you like?", 
         'Enter a number from 1-100'))
-        if(newGrid > 100){
-            alert("Please enter a number less than or equal to 100")
-        } else{
+        // having issues with this not rejecting a string or NaN, even though it should
+        if(newGrid > 100 || newGrid < 0 || newGrid === NaN){
+            alert("Please enter a number between 1 and 100.")
+        }else{
             while(gridContainer.hasChildNodes()){
                 gridContainer.removeChild(gridContainer.firstChild)
             }    
