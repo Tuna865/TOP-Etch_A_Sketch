@@ -23,7 +23,27 @@ function defaultGrid(rows, columns) {
     makeRows(rows);
     makeColumns(columns);
 }
-defaultGrid(16,16)
+// defaultGrid(16,16)
+
+
+// Extra Credit Stuff
+
+/*
+// let colors = ['#ff0000', '#00ff00', '#0000ff']
+const colors = [
+    'red',
+    'blue', 
+    'yellow', 
+    'green', 
+    'orange', 
+    'purple', 
+    'brown',
+    'pink'
+]
+const randomColor = colors[Math.floor(Math.random() * colors.length)]
+
+*/
+
 
 let paintedCell = 'paintedCell'
 
@@ -37,15 +57,11 @@ for(let i = 0; i < cells.length; i++){
 }
 
 addButton.addEventListener('click', () => {
-    console.log('add squares button pressed')
-    prompt("How many squares would you like to add?")
-
-
-
+    let newGrid = prompt("How many squares would you like to add?")
+    defaultGrid(newGrid, newGrid)
 })
 resetButton.addEventListener("click", () => {
-    console.log("The board will reset in 3 seconds")
     setTimeout(startOver = () => {
         window.location.reload()
-    }, 3000)
+    })
 })
