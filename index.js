@@ -38,14 +38,13 @@ for(let i = 0; i < cells.length; i++){
 
 addButton.addEventListener('click', () => {
     console.log('add squares button pressed')
-    prompt("How many squares would you like to add?")
-
+    let newGrid = prompt("How many squares would you like to add?")
+    defaultGrid(newGrid, newGrid)
 
 
 })
 resetButton.addEventListener("click", () => {
-    console.log("The board will reset in 3 seconds")
     setTimeout(startOver = () => {
         window.location.reload()
-    }, 3000)
+    })
 })
