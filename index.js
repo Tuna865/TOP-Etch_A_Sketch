@@ -19,11 +19,13 @@ function makeColumns(cellNum) {
         };
     };
 };
-function defaultGrid(rows, columns) {
+function makeGrid(rows, columns) {
     makeRows(rows);
     makeColumns(columns);
 }
-defaultGrid(16,16)
+makeGrid(16,16)
+
+
 
 let paintedCell = 'paintedCell'
 
@@ -38,8 +40,14 @@ for(let i = 0; i < cells.length; i++){
 
 addButton.addEventListener('click', () => {
     console.log('add squares button pressed')
-    let newGrid = prompt("How many squares would you like to add?")
-    defaultGrid(newGrid, newGrid)
+    // prompt returns a string, so this needs to be number-ized
+    let newGrid = Number(prompt(
+        "How many squares would you like to have on each side?", 
+        'Enter a number from 1-100'))
+
+    if(newGrid > 100){
+     alert("Please enter a number less than or equal to 100")
+    } else{makeGrid(newGrid, newGrid)}
 
 
 })
